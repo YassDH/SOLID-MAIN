@@ -1,0 +1,30 @@
+@startuml
+class ResourceAllocator{
+    - Ressource ressource
+    + ResourceAllocator(Ressource ressource)
+    + int allocate()
+    + void free(int resourceId)
+}
+
+abstract class Ressource{
+    - int ressourceID
+    + void markSlotFree(int resourceId)
+    + void markSlotBusy(int resourceId)
+    + int findFreeSlot()
+}
+class TimeSlotRessource extends Ressource{
+    + void markSlotFree(int resourceId)
+    + void markSlotBusy(int resourceId)
+    + int findFreeSlot()
+}
+class SpaceSlotRessource extends Ressource{
+    + void markSlotFree(int resourceId)
+    + void markSlotBusy(int resourceId)
+    + int findFreeSlot()
+}
+
+
+ResourceAllocator -> Ressource
+
+
+@enduml

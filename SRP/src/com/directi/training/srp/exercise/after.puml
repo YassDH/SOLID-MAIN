@@ -1,0 +1,31 @@
+@startuml
+class Car{
+    - String _id
+    - String _model
+    - String _brand
+    + Car(String id, String model, String brand)
+    + String getId()
+    + String getModel()
+    + String getBrand()
+}
+
+class c{
+    - List<Car> _carsDb
+    + CarManager(List<Car> carsDb)
+    + getCarsNames()
+}
+
+class CarComparator{
+    - List<Car> _carsDb
+    + CarComparator(List<Car> carsDb)
+    + getBestCar()
+}
+
+class CardDB{
+    - List<Car> _carsDb
+    + getFromDb(String carId)
+}
+
+CarManager -> Car
+
+@enduml
